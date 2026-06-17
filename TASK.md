@@ -10,6 +10,7 @@ _Hierbei gibt es ein Problem:_\
 Jeder Hersteller und **jede Werkstatt speichert ihre Daten und Angebote auf andere Art und Weise** und eure Kolleg*innen verschwenden jeden Tag wertvolle Zeit damit sich durch Dokumentationen zu kämpfen.
 
 Deshalb möchtet ihr ein **Verwaltungssystem für eure Firma** entwickeln, welches für eure Hauptanbieter von Teilen spezifische Beschreibungslisten verwaltet und euren Kolleg*innen in einem übersichtlichen Format zur Verfügung stellt. Dabei gibt es folgende Anforderungen:
+
 - Das System kümmert sich selbstständig um das **korrekte Einlesen aller Daten** aus den Angebotslisten der Hersteller. Diese liegen in verschiedenen Formaten vor (JSON, TXT, CSV, …). Eine Darstellung könnte wie folgt aussehen:
 
 ```
@@ -50,6 +51,7 @@ Zur Einfachheit verwenden wir eine vorgefertigte Liste von Fahrzeugteilen und ge
 - Einigt euch auf eine Programmiersprache eurer Wahl. ( Python ist empfehlenswert )
 
 # Struktur/Architektur
+
 Wir schlagen vor, das System in zwei Komponenten zu unterteilen.
 
 ![img_1.png](images/Structure.png)
@@ -58,7 +60,9 @@ Wir schlagen vor, das System in zwei Komponenten zu unterteilen.
 - Die zweite Komponente ist für die Kommunikation mit Benutzer*innen zuständig. Je nach Nutzer werden hier ganze Fahrzeuge oder einfache Teile angezeigt. (Aufgrund der Zeit empfiehlt es sich erst eine Ansicht zu bauen und anschließend die zweite Ansicht darauf aufbauend anzulegen). Diese Komponente speichert die Informationen über die Teile und Fahrzeuge nicht selbst oder aktualisiert zumindest regelmäßig, da diese sich ändern können.
 
 # Aufgaben
+
 ## Alle
+
 - Welche Daten werden benötigt? Wie unterscheiden sich die Erwartungen zwischen deinen Kunden und deinen Kolleg*innen? Wie wollt ihr die Informationen weitergeben?
 - Besprecht die Schnittstellen zwischen den Komponenten!
   - Welchen Zweck hat jede Schnittstelle?
@@ -68,6 +72,7 @@ Wir schlagen vor, das System in zwei Komponenten zu unterteilen.
 - Findet bessere Namen für die Komponenten. slightly smiling face
 
 ## Komponente 1
+
 - Die Teile- und Fahrzeugdaten müssen gespeichert werden. Im ersten Schritt reicht eine Liste im Speicher. Euer Service muss sie auf verschiedene Arten suchen können - welche?
 - Schaut euch die verschiedenen Teilelisten an und achtet hierbei auf die Notwendigkeit für eure Schnittstellen. Entscheidet auch wie ihr mit fehlerhaften oder unzureichenden Daten umgehen wollt.
 - Implementiert Mapper für die Teilelisten und überführt die gegebenen Daten in benötigte Formate.
@@ -78,6 +83,7 @@ Wir schlagen vor, das System in zwei Komponenten zu unterteilen.
   - Speichert die Daten in einem Backup, damit sie nach einem Neustart des Systems wieder verfügbar sind. Wählt dazu eine Speichertechnik aus und implementiert das Speichern und Laden der Daten.
 
 ## Komponente 2
+
 - Überlegt euch, welche Daten die beiden Nutzergruppen vermutlich sehen möchten und wie ihr sie darstellen/ausgeben wollt.
 - Welche Daten braucht ihr für den Aufruf der Schnittstelle von Komponente 1?
 - Implementiert die Benutzerschnittstelle für Kunden.
