@@ -5,7 +5,10 @@ from starlette.responses import JSONResponse
 from models import Autoteilbeschreibung
 
 app = FastAPI()
-app.data = []  # Enthält eine Liste aller Autoteilinformationen
+app.data = [{"category": "2",
+             "name": "1",
+             "description": "3",
+             "serial": "5"}]  # Enthält eine Liste aller Autoteilinformationen
 
 
 @app.get("/hello_world/", response_description="Hello World!")

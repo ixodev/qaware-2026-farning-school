@@ -4,13 +4,16 @@ from pydantic import BaseModel
 
 
 class Autoteilbeschreibung(BaseModel):
-    # TODO: Füge relevante Daten hinzu
-    seriennummer: int
-    zeitstempel: Optional[str]
+    category: str
+    name: str
+    description: int
+    serial: str
+
 
     def to_dict(self):
         return {
-            # TODO: Füge relevante Daten hinzu
-            "seriennummer": self.seriennummer,
-            "zeitstempel": self.zeitstempel
+            "category": self.category,
+            "name": self.name,
+            "description": self.description,
+            "serial": self.serial
         }
